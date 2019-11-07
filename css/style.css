@@ -1,9 +1,13 @@
 :root {
     --accentcolor1: #1ccfb1;
+    --accentcolor2: #dadada;
     --bgrcolor1: #000;
     --bgrcolor2: #fff;
     --btnclickshadow: rgba(0, 0, 0, .5);
+    --figcaptionoverlay: rgba(255, 255, 255, 0.3);
     --fontcolor1: #fff;
+    --fontcolor2: #000;
+    --fontcolor3: #929292;
 }
 * {
     box-sizing: border-box;
@@ -127,6 +131,7 @@ header {
 }
 .header__text-block {
     width: 425px;
+    color: var(--fontcolor2);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -185,3 +190,55 @@ header {
     display: flex;
     justify-content: space-between;
 }
+/***********************************************/
+section {
+    width: 100%;
+    background: var(--bgrcolor2);
+}
+section .container {
+    color: var(--fontcolor2);
+}
+.gallery__content {
+    min-height: 350px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+/**********************/
+.gallery__figure a {
+    display: block;
+    position: relative;
+}
+.gallery__figure__caption {
+    width: 100%;
+    font-weight: 700;
+    background: var(--figcaptionoverlay);
+    padding: 16px 0 24px 13px;
+    position: absolute;
+    bottom: 15px;
+}
+    .gallery__figure__caption::after,
+    .gallery__description__title::after {
+        content: '';
+        display: block;
+        width: 138px;
+        height: 7px;
+        background: var(--accentcolor1);
+        margin-top: 3px;
+    }
+.gallery__description {
+    width: 329px;
+    border: 1px solid var(--accentcolor2);
+    padding: 30px 20px;
+}
+.gallery__description__title {
+    font-weight: 700;
+}
+.gallery__description__text {
+    font-size: 0.85rem;
+    line-height: 1.4rem;
+    color: var(--fontcolor3);
+    margin-top: 16px;
+}
+/***********************************************/
