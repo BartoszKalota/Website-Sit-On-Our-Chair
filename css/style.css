@@ -548,3 +548,39 @@ button[type="submit"] {
         outline: 2px dashed var(--accentcolor1);
     }
 /***********************************************/
+footer {
+    width: 100%;
+    background: var(--bgrcolor2);
+}
+footer .container {
+    color: var(--fontcolor5);
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/**********************/
+small {
+    font-weight: 700;
+    word-spacing: 2px;
+}
+.footer__block {
+    display: flex;
+    align-items: center;
+}
+.footer__block__socials a {
+    display: inline-block;
+}
+.footer__block__socials img {
+    margin-left: 4px;
+}
+.footer__block__logo {
+    font-weight: 600;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-left: 60px;
+}
+.footer__block__logo span {
+    font-weight: 900;
+}
