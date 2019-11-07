@@ -7,6 +7,7 @@
     --bgrcolor4: #f9f9f9;
     --bgrcolor5: #e4e4e4;
     --bordercolor1: #d5d5d5;
+    --bordercolor2: #1ccfb188;
     --btnclickshadow: rgba(0, 0, 0, .5);
     --figcaptionoverlay: rgba(255, 255, 255, 0.3);
     --fontcolor1: #fff;
@@ -176,16 +177,14 @@ header {
     text-transform: uppercase;
     padding: 15px 35px;
 }
-    .header__text-block__button:hover {
+    .header__text-block__button:hover,
+    .header__text-block__button:active {
         background: var(--bgrcolor2);
         color: var(--accentcolor1);
         border: 2px solid var(--accentcolor1);
         transition: 0.2s;
     }
     .header__text-block__button:active {
-        background: var(--bgrcolor2);
-        color: var(--accentcolor1);
-        border: 2px solid var(--accentcolor1);
         box-shadow: inset 0 0 5px 3px var(--btnclickshadow);
     }
 .header__arrows-block {
@@ -205,6 +204,7 @@ section {
 section .container {
     color: var(--fontcolor2);
 }
+/**********************/
 .gallery__content {
     min-height: 350px;
     padding-top: 30px;
@@ -212,7 +212,6 @@ section .container {
     justify-content: space-between;
     align-items: flex-start;
 }
-/**********************/
 .gallery__figure a {
     display: block;
     position: relative;
@@ -258,14 +257,16 @@ section .container {
     padding-bottom: 65px;
 }
 /**********************/
-.price-list__header {
+.price-list__header,
+.contact__header {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--fontcolor4);
     text-transform: uppercase;
     margin-bottom: 75px;
 }
-    .price-list__header::after {
+    .price-list__header::after,
+    .contact__header::after {
         content: '';
         display: block;
         width: 320px;
@@ -399,28 +400,151 @@ section .container {
     color: var(--accentcolor1);
     background: var(--bgrcolor2);
 }
-    .price-block__button:hover {
+    .price-block__button:hover,
+    .price-block__button:active {
         color: var(--accentcolor1);
         background: var(--bgrcolor2);
         border: 2px solid var(--accentcolor1);
         transition: 0.2s;
     }
-    .price-block--b__button:hover {
+    .price-block--b__button:hover,
+    .price-block--b__button:active {
         color: var(--fontcolor1);
         background: var(--accentcolor1);
         border: 2px solid var(--fontcolor1);
         transition: 0.2s;
     }
     .price-block__button:active {
-        color: var(--accentcolor1);
-        background: var(--bgrcolor2);
-        border: 2px solid var(--accentcolor1);
         box-shadow: inset 0 0 5px 3px var(--btnclickshadow);
     }
     .price-block--b__button:active {
-        color: var(--fontcolor1);
-        background: var(--accentcolor1);
-        border: 2px solid var(--fontcolor1);
         box-shadow: inset 0 0 5px 3px var(--btnclickshadow);
+    }
+/***********************************************/
+.contact .container {
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+/**********************/
+.contact__header {
+    margin-bottom: 45px;
+}
+.contact-form {
+    display: flex;
+}
+.contact-form__block-left {
+    width: 58%;
+    display: flex;
+    flex-direction: column;
+}
+.contact-form__block-left input,
+.contact-form__block-left textarea {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 15px;
+    border: 1px solid var(--bordercolor2);
+    margin-bottom: 25px;
+}
+.contact-form__block-left textarea {
+    font-family: 'Raleway', sans-serif;     /* Tutaj i w stylach dla placeholderów konieczne było określenie cech fontu w celu uzyskania jednolitości */
+    font-size: 1.3rem;
+    font-weight: 400;
+    min-height: 175px;
+    resize: none;
+    margin-bottom: 0;
+}
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        outline: 0;
+        box-shadow: 0 0 5px 1px var(--accentcolor1);
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.3rem;
+        color: var(--fontcolor2);
+        opacity: 0.3;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.3rem;
+        color: var(--fontcolor2);
+        opacity: 0.3;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.3rem;
+        color: var(--fontcolor2);
+        opacity: 0.3;
+    }
+.contact-form__block-right {
+    width: 42%;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact-form__block-right img {
+    transform: translateY(-20px);
+}
+.checkbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 42px;
+    height: 42px;
+    background: var(--bgrcolor2);
+    border: 1px solid var(--bordercolor2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    input[type="checkbox"]:checked::after {
+        content: '';
+        display: block;
+        width: 35px;
+        height: 30px;
+        background-image: url('../images/form_ok.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+.checkbox__text {
+    width: 87%;
+    font-size: 1.2rem;
+    margin-left: 15px;
+    opacity: 0.4;
+}
+button[type="submit"] {
+    width: 340px;
+    height: 70px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--fontcolor1);
+    text-transform: uppercase;
+    background: var(--accentcolor1);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+    button[type="submit"]:hover,
+    button[type="submit"]:active {
+        color: var(--accentcolor1);
+        background: var(--bgrcolor2);
+        border: 2px solid var(--accentcolor1);
+        transition: 0.2s;
+    }
+    button[type="submit"]:active {
+        box-shadow: inset 0 0 5px 3px var(--btnclickshadow);
+    }
+    button[type="submit"]:focus {
+        outline: 2px dashed var(--accentcolor1);
     }
 /***********************************************/
